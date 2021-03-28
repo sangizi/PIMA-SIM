@@ -1,0 +1,41 @@
+/*Modified Row Decoder */
+/*normal operation */
+//-Max Row Activation: 1     
+/* PIM operation, number of Activated Rows for PIM */  
+-Max Row Activation:  2    
+
+/*Modified Sense Amplifier */
+/* From circuit-level simulation */
+//-Sense Amplifier Power (uW): 50       
+//-Sense Amplifier Read Dynamic Energy (fJ): 1500  
+//-Sense Amplifier Latency (ns):  3         
+//-Sense Amplifier Height (um):  10                  
+//-Sense Amplifier Width (um):  3 
+
+/*Custom Sub-array-level Add-on Component parameters*/
+/* Subaddon_compnent[]= Subaddon_component(c1,c2,...,cn), that should be entered this way: without space*/
+/*-Subaddon component Latency (ns): c1.Latency,c2.Latency,...,cn.Latency*/
+/* e.g. for component c1 => c1.Latency: 0.66, c1.DynamicEnergy: 0.000004259, c1.LeakagePower: 6.4539, c1.Area: 17.364 */
+
+-Subaddon component Latency (ns): 0.66,0,0
+-Subaddon component Dynamic Energy (nJ):  0.000004259,0,0
+-Subaddon component Leakage Power (uW): 6.4539,0,0
+-Subaddon component  Area (um^2): 17.364,0,0 
+
+
+/*Custom MAT-level Add-on Component parameters*/
+/* Mataddon_compnent[]= Mataddon_component(c1,c2,...,cn): without space*/
+-Mataddon component Latency (ns): 0,0,0
+-Mataddon component Dynamic Energy (nJ): 0,0,0
+-Mataddon component Leakage Power (uW): 0,0,0
+-Mataddon component Area (um^2): 0,0,0 
+
+
+/*Custom BANK-level Add-on Component parameters*/
+/* Bankaddon_compnent[]= Bankaddon_component(c1,c2,...,cn): without space*/
+-Bankaddon component Latency (ns): 0,0,0 
+-Bankaddon component Dynamic Energy (nJ): 0,0,0  
+-Bankaddon component Leakage Power (uW): 0,0,0
+-Bankaddon component Area (um^2): 0,0,0 
+
+
