@@ -1,0 +1,95 @@
+README
+
+PIMA-SIM 1.0: A Simple & Flexible Processing-in-Memory Support for NVSIM
+==================================================================================
+
+Sections
+
+    1. Overview
+    2. Compiling and Running PIMA-SIM
+    3. .pim configuration file  
+
+---------------------------------------------------------------------------------
+1. Overview
+
+PIMA-SIM is a Processing-in-Memory (PIM) evaluation tool developed on top of the NVSIM 
+(https://github.com/SEAL-UCSB/NVSim) to study the timing, energy, and area of various PIM 
+technologies based on non-volatile memories and SRAM. PIMA-SIM offers the same flexibility 
+in terms of bank/mat/subarray organization and peripheral circuitry design as NVSIM, while 
+supporting PIM-level configurations.
+
+---------------------------------------------------------------------------------
+2. Compiling and Running PIMA-SIM
+
+    $ make
+
+PIMA-SIM is under-develop to support two levels of simulation:
+   1- Fast Simulation Mode (FSM) 
+   2- Instruction-aware Simulation Mode (ISM). 
+PIM-SIM 1.0 currently only supports the basic FSM. PIMA-SIM can be configured using three config.
+files. At the cell level, it uses NVSIM's .cell file to save the device-circuit level info. At the
+architecture level, it uses NVSIM's .cfg file to configure the memory organization and optimization
+target. At the PIM level, PIMA-SIM's .pim file is used to save the PIM-level parameters. 
+Please note that PIMA-SIM 1.0 only models a single-bank, and we leave multi-bank memory for
+the next versions.
+
+2.1. Fast Simulation Mode
+After setting up PIMA-SIM's configuration files (.cell,.cfg,.pim), if no .cfg file is
+selected, PIMA-SIM will load the default configuration file (pimasim.cfg)
+
+    $ ./pimasim
+
+ However, you can define your own custom .cfg file 
+
+    $ ./pimasim <custom>.cfg
+
+---------------------------------------------------------------------------------
+3. .pim configuration file
+
+PIMA-SIM's .pim file gives the following flexibilities to study the PIM behaviors:
+     a. User can specify the number of row activation for PIM purposes. 
+     b. User can insert their customized sense amplifier design. 
+     c. User can add customized add-ons at the sub-array level.
+     d. User can add customized add-ons at the mat level.
+     e. User can add customized add-ons at the bank level.
+     f. User can efficiently study the overheads imposed by various PIM components in the high level.
+     g. User can compare the performance of different PIM designs.
+ 
+---------------------------------------------------------------------------------
+If you have any comments or suggestions, please contact us via email:
+Shaahin Angizi (shaahin.angizi@gmail.com), Sepehr Tabrizchi (sepehr.095@gmail.com), Deliang Fan (dfan@asu.edu)
+
+If you find this project useful, please cite the following works:
+
+@article{angizi2019mrima,
+  title={Mrima: An mram-based in-memory accelerator},
+  author={Angizi, Shaahin and He, Zhezhi and Awad, Amro and Fan, Deliang},
+  journal={IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  volume={39},
+  number={5},
+  pages={1123--1136},
+  year={2019},
+  publisher={IEEE}
+}
+
+@inproceedings{angizi2019accelerating,
+  title={Accelerating deep neural networks in processing-in-memory platforms: Analog or digital approach?},
+  author={Angizi, Shaahin and He, Zhezhi and Reis, Dayane and Hu, Xiaobo Sharon and Tsai, Wilman and Lin, Shy Jay and Fan, Deliang},
+  booktitle={2019 IEEE Computer Society Annual Symposium on VLSI (ISVLSI)},
+  pages={197--202},
+  year={2019},
+  organization={IEEE}
+}
+
+and the NVSIM paper:
+
+@article{dong2012nvsim,
+  title={Nvsim: A circuit-level performance, energy, and area model for emerging nonvolatile memory},
+  author={Dong, Xiangyu and Xu, Cong and Xie, Yuan and Jouppi, Norman P},
+  journal={IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  volume={31},
+  number={7},
+  pages={994--1007},
+  year={2012},
+  publisher={IEEE}
+}
