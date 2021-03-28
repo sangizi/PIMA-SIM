@@ -23,7 +23,7 @@ supporting PIM-level configurations.
 
     $ make
 
-PIMA-SIM is under-develop to support two levels of simulation:
+PIMA-SIM is under development to support two levels of simulation:
    1- Fast Simulation Mode (FSM) 
    2- Instruction-aware Simulation Mode (ISM). 
 PIM-SIM 1.0 currently only supports the basic FSM. PIMA-SIM can be configured using three config.
